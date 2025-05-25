@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import TaskForm from "../components/TaskForm";
 import TaskItem from "../components/TaskItem";
@@ -50,16 +50,19 @@ export default function Home() {
   });
 
   return (
-    <main className=" mx-auto p-6">
-      <h1 className="text-center">Rakesh Bora </h1>
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">📝 To-Do List</h1>
+    <main className="max-w-4xl mx-auto p-4 sm:p-6">
+      <h1 className="text-center text-lg sm:text-xl font-semibold mb-6">
+        Rakesh Bora 📝 To-Do List
+      </h1>
 
-        <div className="flex space-x-2">
+      <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-3 sm:gap-0">
+        <div className="flex flex-wrap sm:flex-nowrap gap-2">
           <button
             onClick={() => setView("active")}
-            className={`px-3 py-1 rounded ${
-              view === "active" ? "bg-blue-500 text-white" : "bg-gray-200"
+            className={`px-3 py-1 rounded text-sm sm:text-base ${
+              view === "active"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-200 hover:bg-blue-100"
             }`}
           >
             Active Tasks
@@ -67,8 +70,10 @@ export default function Home() {
 
           <button
             onClick={() => setView("important")}
-            className={`px-3 py-1 rounded ${
-              view === "important" ? "bg-yellow-400 text-white" : "bg-gray-200"
+            className={`px-3 py-1 rounded text-sm sm:text-base ${
+              view === "important"
+                ? "bg-yellow-400 text-white"
+                : "bg-gray-200 hover:bg-yellow-100"
             }`}
           >
             Important Tasks
@@ -76,8 +81,10 @@ export default function Home() {
 
           <button
             onClick={() => setView("archived")}
-            className={`px-3 py-1 rounded ${
-              view === "archived" ? "bg-gray-700 text-white" : "bg-gray-200"
+            className={`px-3 py-1 rounded text-sm sm:text-base ${
+              view === "archived"
+                ? "bg-gray-700 text-white"
+                : "bg-gray-200 hover:bg-gray-300"
             }`}
           >
             Archived Tasks
@@ -99,7 +106,7 @@ export default function Home() {
 
       <div className="mt-6 space-y-3">
         {visibleTasks.length === 0 && (
-          <p className="text-gray-500">
+          <p className="text-gray-500 text-center">
             {view === "archived"
               ? "No archived tasks."
               : view === "important"
