@@ -51,6 +51,7 @@ export default function Home() {
 
   return (
     <main className=" mx-auto p-6">
+      <h1 className="text-center">Rakesh Bora </h1>
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-2xl font-bold">📝 To-Do List</h1>
 
